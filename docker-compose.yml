@@ -1,0 +1,20 @@
+version: '3.8'
+services: 
+  swim-merge: 
+    container_name: swim-merge
+    image: lagarnicachavira/swim-merge:latest
+    restart: always
+    environment:
+      # app environment
+      BOILERPLATE_ENV: 'prod'
+      # default database connection URLS for sqlalchemy
+      USER_DATABASE_URL: 'mysql://user:password@localhost:3306/userdb' 
+      # model database url
+      MODEL_DATABASE_URL: 'mongodb://user:password@localhost:27017/modeldb?authSource=admin'
+      # workflow database url
+      WORKFLOW_DATABASE_URL: 'mongodb://user:password@localhost:27017/workflowdb?authSource=admin'
+      # secret key
+      SECRET_KEY: 'yoursecretapikeyhere'
+    ports:
+      # <host port> : <application port>
+      - '5021:5003'

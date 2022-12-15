@@ -1,0 +1,30 @@
+## Commands:
+> py -m venv env  // create new virtual python environment
+> .\env\Scripts\activate // activate environment
+> update pip
+> py -m pip install -r requirements.txt // install required packages
+> localhost (debug): > py manage.py run (windows)
+
+
+> py manage.py run  // run webservice on localhost (windows)
+> py manage.py postprocess // run test case
+
+swagger docs will be available at http://localhost:5000/swim-merge/docs/
+
+# Docker commands
+
++ setup UWSGI server (app.ini, wsgi.py)
+
+1. Create docker file (Dockerfile)
+2. Create ignore file (.dockerignore)
+3. docker build -t dockeruser/swim-merge:latest .
+4. docker run -p 5021:5003 dockeruser/swim-merge
+5. Create docker compose file
+6. docker compose up (explicit run)
+6b. docker compose up -d (background run)
+7. docker push username/swim-merge (push to a docker repo)
+
+# centos open port commands
+
+> sudo firewall-cmd --zone=public --add-port=5021/tcp --permanent  
+> sudo firewall-cmd --reload  
