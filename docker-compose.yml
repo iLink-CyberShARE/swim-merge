@@ -2,7 +2,7 @@ version: '3.8'
 services: 
   swim-merge: 
     container_name: swim-merge
-    image: lagarnicachavira/swim-merge:latest
+    image: lagarnicachavira/swim-merge-public:latest
     restart: always
     environment:
       # app environment
